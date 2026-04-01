@@ -1,0 +1,57 @@
+{
+    "nama_produk": "Nike-Vibe by Telkomsel",
+    "ide_kampanye": [
+        {
+            "judul": "Tantangan Daya Tahan 5G",
+            "deskripsi": "Kompetisi nasional bagi kandidat posisi bertekanan tinggi untuk menyelesaikan tugas kognitif sambil menjaga ritme lari stabil yang dipantau melalui sensor Nike dan jaringan 5G Telkomsel."
+        },
+        {
+            "judul": "Lencana Disiplin Terverifikasi",
+            "deskripsi": "Pengguna Nike Run Club (NRC) di jaringan Telkomsel dapat membuka 'Lencana Disiplin' setelah 30 hari berolahraga secara konsisten, yang berfungsi sebagai sertifikasi otomatis untuk profil rekrutmen mereka."
+        },
+        {
+            "judul": "Pusat Aktivasi Pop-up 'Show Your Vibe'",
+            "deskripsi": "Stan aktivasi fisik di kawasan bisnis seperti SCBD Jakarta atau pusat kota Bogor tempat para pencari kerja dapat mencoba simulasi rekrutmen AI secara langsung."
+        },
+        {
+            "judul": "Kampanye Rekrutmen Berbasis Privasi",
+            "deskripsi": "Kampanye yang menonjolkan prinsip 'Data Anda, Pilihan Anda,' dengan menekankan enkripsi tingkat tinggi dan keselarasan dengan standar UU PDP."
+        },
+        {
+            "judul": "Pencarian Talenta Tersembunyi",
+            "deskripsi": "Cerita media sosial yang menyoroti talenta dari daerah terpencil yang ditemukan oleh AI Nike-Vibe berdasarkan data performa, bukan sekadar resume tradisional."
+        }
+    ],
+    "strategi_pemasaran": {
+        "fase_1_kesadaran": [
+            "Integrasi omnichannel melalui aplikasi MyTelkomsel untuk pengguna yang sering mengakses konten produktivitas.",
+            "Kolaborasi dengan CEO startup dan atlet nasional untuk berbagi skor 'Vibe' di platform profesional seperti LinkedIn."
+        ],
+        "fase_2_pertimbangan": [
+            "Publikasi whitepaper 'Masa Depan Perekrutan' mengenai korelasi data biometrik dengan ketahanan mental karyawan.",
+            "Seri webinar Bisnis Digital untuk para Manajer HR mengenai integrasi rekrutmen AI guna mengurangi tingkat pergantian karyawan (turnover)."
+        ],
+        "fase_3_konversi": [
+            "Akses beta eksklusif bagi startup di inkubator universitas, seperti yang ada di Universitas Pakuan.",
+            "Bundling paket data Telkomsel 'Productive Run' yang mencakup akses premium ke fitur rekrutmen eksklusif Nike-Vibe."
+        ],
+        "distribusi_saluran": [
+            {
+                "saluran": "LinkedIn",
+                "taktik": "Kampanye 'Resume Performa' yang ditargetkan khusus untuk para profesional dan praktisi HR."
+            },
+            {
+                "saluran": "MyTelkomsel",
+                "taktik": "Penargetan iklan berbasis perilaku untuk mengonversi pengguna aktif Telkomsel menjadi kandidat potensial."
+            },
+            {
+                "saluran": "Aplikasi Nike",
+                "taktik": "Integrasi Papan Peringkat (Leaderboard) Karier untuk memotivasi pengguna aktif NRC."
+            },
+            {
+                "saluran": "Pusat Aktivasi Fisik",
+                "taktik": "Demo rekrutmen berbasis AR/VR untuk memberikan pengalaman seleksi AI yang imersif."
+            }
+        ]
+    }
+}

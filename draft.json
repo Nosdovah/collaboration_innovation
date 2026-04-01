@@ -1,0 +1,47 @@
+{
+  "innovation_concept": {
+    "title": "Telkomsel x Nike AI Recruitment Collaboration",
+    "framework": "SCAMPER",
+    "output_product": {
+      "name": "Nike-Vibe by Telkomsel",
+      "description": "Platform rekrutmen berbasis AI yang memantau energi, fokus, dan disiplin calon karyawan secara real-time melalui jaringan seluler dan perangkat wearable."
+    },
+    "scamper_analysis": [
+      {
+        "category": "Substitute",
+        "action": "Substitusi CV Tradisional",
+        "result": "Mengganti resume kertas dengan Biometric Data Portfolio yang mengukur daya tahan dan manajemen stres melalui sensor wearable Nike."
+      },
+      {
+        "category": "Combine",
+        "action": "Kombinasi Konektivitas & AI",
+        "result": "Menggabungkan konektivitas 5G Telkomsel dengan algoritma AI Nike Training Club untuk tes rekrutmen berbasis AR secara remote."
+      },
+      {
+        "category": "Adapt",
+        "action": "Adaptasi Sistem Scouting",
+        "result": "Mengadaptasi metode scouting atlet profesional untuk mencari talenta bisnis dengan profil 'Mental Juara' berdasarkan pola aktivitas harian."
+      },
+      {
+        "category": "Modify",
+        "action": "Modifikasi Proses Seleksi",
+        "result": "Mengubah rekrutmen menjadi Gamified Career Race di mana keputusan kandidat dipantau AI di bawah tekanan fisik atau kognitif."
+      },
+      {
+        "category": "Put to another use",
+        "action": "Penggunaan Data Perilaku",
+        "result": "Memanfaatkan data dari Nike Run Club (NRC) sebagai indikator Behavioral Assessment untuk mengukur tingkat kedisiplinan kandidat."
+      },
+      {
+        "category": "Eliminate",
+        "action": "Eliminasi Seleksi Manual",
+        "result": "Menghilangkan tahap kurasi berkas manual; AI memberikan penawaran kerja langsung berdasarkan top 1% performa data."
+      },
+      {
+        "category": "Reverse/Rearrange",
+        "action": "Pembalikan Peran Rekrutmen",
+        "result": "Perusahaan melamar ke kandidat berdasarkan leaderboard kebugaran dan fokus mental yang tercatat di ekosistem digital Telkomsel."
+      }
+    ]
+  }
+}
