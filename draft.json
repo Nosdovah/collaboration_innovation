@@ -35,7 +35,7 @@
       {
         "category": "Eliminate",
         "action": "Eliminasi Seleksi Manual",
-        "result": "Menghilangkan tahap kurasi berkas manual; AI memberikan penawaran kerja langsung berdasarkan top 1% performa data."
+        "result": "Menghilangkan tahap kurasi berkas manual; AI memberikan penawaran kerja langsung berdasarkan top X% performa data."
       },
       {
         "category": "Reverse/Rearrange",
