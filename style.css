@@ -505,6 +505,59 @@ footer {
     to { transform: scale(1); opacity: 1; }
 }
 
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-card-body {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 4rem;
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    animation: zoom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: none;
+}
+
+.modal-card-body h4 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.modal-card-body p {
+    font-size: 1.4rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+}
+
+.modal-card-body ul {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.modal-card-body li {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.modal-card-body li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
 .close-modal {
     position: absolute;
     top: 30px;
@@ -532,7 +585,7 @@ footer {
     font-weight: 600;
 }
 
-.visual-img-container {
+.visual-img-container, .card, .campaign-card, .channel-card, .strategy-phase {
     cursor: pointer;
 }
 
