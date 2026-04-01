@@ -18,7 +18,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Inject Hero Image
         const productVisual = document.getElementById('product-visual');
-        productVisual.innerHTML = `<img src="hero.png" alt="Nike-Vibe Vision" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">`;
+        productVisual.innerHTML = `<img src="hero.png" alt="Nike-Vibe Vision" id="hero-img" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); cursor: pointer;">`;
+        
+        document.getElementById('hero-img').onclick = () => {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const captionText = document.getElementById('modal-caption');
+            
+            modal.style.display = "block";
+            modalImg.src = "hero.png";
+            captionText.innerHTML = concept.title;
+        };
 
         // SCAMPER Grid
         const scamperGrid = document.getElementById('scamper-grid');
@@ -79,7 +89,32 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             `;
             visualsGrid.appendChild(card);
+
+            // Add click event for zooming
+            card.querySelector('.visual-img-container').onclick = () => {
+                const modal = document.getElementById('image-modal');
+                const modalImg = document.getElementById('modal-img');
+                const captionText = document.getElementById('modal-caption');
+                
+                modal.style.display = "block";
+                modalImg.src = v.src;
+                captionText.innerHTML = v.title;
+            };
         });
+
+        // Close modal logic
+        const modal = document.getElementById('image-modal');
+        const closeModal = document.querySelector('.close-modal');
+        
+        closeModal.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
 
     } catch (error) {
         console.error('Error loading data:', error);
