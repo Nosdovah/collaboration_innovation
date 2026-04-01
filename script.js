@@ -60,6 +60,27 @@ document.addEventListener('DOMContentLoaded', async () => {
             channelGrid.appendChild(card);
         });
 
+        // Inject Additional Visuals
+        const visualsGrid = document.getElementById('visuals-grid');
+        const visuals = [
+            { src: 'images/Dashboard_candidate.png', alt: 'Nike-Vibe Dashboard Concept', title: 'Smart Recruitment Dashboard' },
+            { src: 'images/Smartband_recruitment.png', alt: 'Nike Smartband Interface', title: 'Wearable Integration' }
+        ];
+
+        visuals.forEach((v, index) => {
+            const card = createCard('visual-card', index + 20);
+            card.innerHTML = `
+                <div class="visual-img-container">
+                    <img src="${v.src}" alt="${v.alt}">
+                </div>
+                <div class="visual-info">
+                    <div class="visual-tag">Visual Concept</div>
+                    <h4 class="visual-title">${v.title}</h4>
+                </div>
+            `;
+            visualsGrid.appendChild(card);
+        });
+
     } catch (error) {
         console.error('Error loading data:', error);
     }
