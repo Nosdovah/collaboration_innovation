@@ -131,6 +131,14 @@ h1 {
     transform: translateY(-5px);
 }
 
+.product-info {
+    flex: 1.2;
+}
+
+.product-visual {
+    flex: 0.8;
+}
+
 .product-info h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -378,6 +386,38 @@ footer {
     color: var(--text-main);
 }
 
+@media (max-width: 1024px) {
+    h1 { font-size: 3.5rem; }
+    .product-hero { padding: 2.5rem; gap: 2rem; }
+}
+
 @media (max-width: 992px) {
     .strategy-flow { flex-direction: column; }
+    .product-hero { flex-direction: column; text-align: center; }
+    .product-info, .product-visual { flex: none; width: 100%; }
+    .product-visual { order: -1; }
+    h1 { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 3rem 1.5rem; }
+    header { margin-bottom: 3rem; }
+    h1 { font-size: 2.5rem; letter-spacing: -1px; }
+    .product-info h2 { font-size: 2rem; }
+    .scamper-grid, .campaign-grid { grid-template-columns: 1fr; }
+    .card, .campaign-card, .strategy-phase { padding: 1.5rem; }
+    .section-title { font-size: 1.2rem; letter-spacing: 2px; }
+    .phase-number { font-size: 4rem; top: -10px; right: -10px; }
+    footer { padding: 4rem 0; margin-top: 3rem; }
+    .authors { gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 2rem 1rem; }
+    h1 { font-size: 2.2rem; }
+    .subtitle { font-size: 1rem; }
+    .brand-badge { font-size: 0.65rem; padding: 0.4rem 1.2rem; }
+    .product-info h2 { font-size: 1.75rem; }
+    .author-item { font-size: 0.7rem; padding: 0.4rem 0.8rem; }
+    .footer-copyright { font-size: 0.75rem; }
 }
