@@ -30,7 +30,7 @@ async function triggerLexGuard(candidateId) {
           <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Vibe Score</th>
+            <th>Performance Index</th>
             <th>Action</th>
           </tr>
         </thead>
