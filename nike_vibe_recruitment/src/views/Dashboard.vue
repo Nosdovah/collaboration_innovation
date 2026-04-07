@@ -167,6 +167,8 @@ watchEffect(() => {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
+  text-align: center;
 }
 
 .bio-stats h3 {
@@ -176,6 +178,7 @@ watchEffect(() => {
   margin: 0;
   border-bottom: 1px solid rgba(255, 10, 51, 0.4);
   padding-bottom: 5px;
+  width: 100%;
 }
 
 .stat-box { display: flex; flex-direction: column; }
