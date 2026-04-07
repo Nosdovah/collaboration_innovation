@@ -108,6 +108,44 @@ watchEffect(() => {
           </div>
        </div>
     </div>
+
+    <!-- Bottom Compliance & AI Panel -->
+    <div class="bottom-panel" v-if="!isDataRemoved">
+       <div class="info-card ai-card">
+          <div class="card-header">AI LOKAL (OLLAMA)</div>
+          <div class="card-body status-active">
+             <div class="blinking-dot"></div>
+             <span>AKTIF (Pemrosesan Aman 100% On-Premise)</span>
+          </div>
+       </div>
+       
+       <div class="info-card compliance-card">
+          <div class="card-header">UU PDP COMPLIANCE</div>
+          <div class="card-body status-green">
+             <span>AMAT PATUH (85/100)</span>
+          </div>
+       </div>
+
+       <div class="info-card risk-card">
+          <div class="card-header">PERINGATAN CELAH RISIKO</div>
+          <div class="card-body alert-red">
+             <span>⚠️ 3 Gaps Found: NIK Telanjang di Turso DB</span>
+          </div>
+       </div>
+
+       <div class="info-card timeline-card">
+          <div class="card-header">TIMELINE PERFORMA 5G ENDURANCE CHALLENGE</div>
+          <div class="timeline-bar">
+             <div class="time-node active">M1</div>
+             <div class="time-line"></div>
+             <div class="time-node active">M2</div>
+             <div class="time-line"></div>
+             <div class="time-node active">M3</div>
+             <div class="time-line"></div>
+             <div class="time-node blink">M4</div>
+          </div>
+       </div>
+    </div>
   </div>
 </template>
 
@@ -323,4 +361,84 @@ watchEffect(() => {
 }
 
 .wiped-text { color: #555; text-shadow: none; font-size: 2rem;}
+
+/* Bottom Panel Styles */
+.bottom-panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 10, 51, 0.4);
+  padding-top: 15px;
+}
+
+.info-card {
+  flex: 1;
+  background: rgba(10, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.card-body {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-active { color: #00ffff; text-shadow: 0 0 5px #00ffff; }
+.status-green { color: #00ff00; text-shadow: 0 0 5px #00ff00; font-weight: bold; }
+.alert-red { color: #ff0a33; text-shadow: 0 0 5px #ff0a33; font-weight: bold; }
+
+.blinking-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ffff;
+  animation: blinkFast 1s infinite alternate;
+}
+
+@keyframes blinkFast {
+  0% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.timeline-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.time-node {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  color: white;
+}
+
+.time-node.active { background: #ff0a33; box-shadow: 0 0 5px #ff0a33; }
+.time-node.blink { background: transparent; border: 1px solid #ff0a33; animation: blinkFast 1s infinite; color: #ff0a33; }
+
+.time-line {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 10, 51, 0.5);
+}
 </style>
