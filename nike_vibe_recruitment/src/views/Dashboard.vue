@@ -129,7 +129,7 @@ watchEffect(() => {
        <div class="info-card risk-card">
           <div class="card-header">PERINGATAN CELAH RISIKO</div>
           <div class="card-body alert-red">
-             <span>⚠️ 3 Gaps Found: NIK Telanjang di Turso DB</span>
+             <span>⚠️ 3 Gaps Found: NIK Terbuka di Turso DB</span>
           </div>
        </div>
 
