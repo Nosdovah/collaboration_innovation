@@ -1,0 +1,84 @@
+{
+  "name": "Nike-Vibe 5G Anti-Spoofing & AI Scoring",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "nike-5g-ingest"
+      },
+      "name": "Webhook Receiver (NRC & Telkomsel 5G)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [ 250, 300 ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.body.telecom_metadata.latency_ms}}",
+              "operation": "larger",
+              "value2": 25
+            }
+          ]
+        }
+      },
+      "name": "5G Anti-Spoofing Check",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [ 450, 300 ],
+      "notesInFlow": true,
+      "notes": "Verify latency < 25ms (True 5G). Drop if VPN/Spoofed."
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO compliance_log (kandidat_id, action_type, status) VALUES ('{{$json.body.kandidat_id}}', '5G_SPOOF_CHECK', 'POSSIBLE_SPOOF');"
+      },
+      "name": "Flag Candidate in DB",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [ 700, 150 ]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:11434/api/generate",
+        "method": "POST",
+        "bodyParametersUi": {
+          "parameter": [
+            { "name": "model", "value": "deepseek-coder" },
+            { "name": "prompt", "value": "={{ $json.body }}" }
+          ]
+        }
+      },
+      "name": "Ollama Behavioral Biometrics (DeepSeek)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [ 700, 400 ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO candidates (kandidat_id, vibe_score, discipline_index) VALUES ('{{$json.kandidat_id}}', '{{$json.vibe_score}}', '{{$json.discipline_index}}');"
+      },
+      "name": "Turso DB (Persistence)",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [ 900, 400 ]
+    }
+  ],
+  "connections": {
+    "Webhook Receiver (NRC & Telkomsel 5G)": {
+      "main": [ [ { "node": "5G Anti-Spoofing Check", "type": "main", "index": 0 } ] ]
+    },
+    "5G Anti-Spoofing Check": {
+      "main": [
+        [ { "node": "Flag Candidate in DB", "type": "main", "index": 0 } ],
+        [ { "node": "Ollama Behavioral Biometrics (DeepSeek)", "type": "main", "index": 0 } ]
+      ]
+    },
+    "Ollama Behavioral Biometrics (DeepSeek)": {
+      "main": [ [ { "node": "Turso DB (Persistence)", "type": "main", "index": 0 } ] ]
+    }
+  }
+}

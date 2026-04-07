@@ -23,6 +23,87 @@ body {
     color: var(--text-main);
     overflow-x: hidden;
     line-height: 1.6;
+    padding-top: 80px; /* Space for sticky nav */
+}
+
+/* Main Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1.25rem 0;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--secondary);
+}
+
+.dashboard-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(238, 20, 36, 0.3);
+}
+
+.dashboard-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(238, 20, 36, 0.5);
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: blinkGlow 1s infinite;
+}
+
+@keyframes blinkGlow {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 /* Background Gradients */
