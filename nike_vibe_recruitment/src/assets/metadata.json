@@ -2,7 +2,7 @@
     {
         "kandidat_id": "NV-2026-001",
         "profil_dasar": {
-            "nama_kandidat": "Raihan Akbar",
+            "nama_kandidat": "M Zhafran",
             "lokasi": "Bogor, Jawa Barat",
             "recruitment_status": "PRO_CERTIFIED",
             "status_verifikasi": "VERIFIED_PRO"
@@ -45,7 +45,7 @@
     {
         "kandidat_id": "NV-2026-002",
         "profil_dasar": {
-            "nama_kandidat": "Jane Doe",
+            "nama_kandidat": "Ryan Adrian",
             "lokasi": "Jakarta Pusat, DKI Jakarta",
             "recruitment_status": "ANOMALOUS_DATA",
             "status_verifikasi": "RE-TEST_REQUIRED"
