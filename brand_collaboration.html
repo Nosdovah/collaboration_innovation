@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike-Vibe by Telkomsel | Brand Collaboration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .paper-section {
+            background: rgba(10, 0, 0, 0.4);
+            border: 1px solid rgba(255, 10, 51, 0.3);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(255, 10, 51, 0.05);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .paper-section h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.2rem;
+            color: #ff0a33;
+            border-bottom: 2px solid rgba(255, 10, 51, 0.2);
+            padding-bottom: 10px;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .paper-section h3 {
+            font-family: 'Teko', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .paper-section p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+        }
+        
+        .paper-section ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .paper-section li {
+            line-height: 1.8;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        .concept-frame {
+            background: rgba(255, 10, 51, 0.02);
+            padding: 20px;
+            border-left: 4px solid #ff0a33;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-content">
+            <div class="nav-logo">NIKE-VIBE</div>
+            <div class="nav-links">
+                <a href="index.html">Innovation Concept</a>
+                <a href="brand_collaboration.html" class="active">Brand Collaboration</a>
+                <a href="/dashboard/" class="dashboard-btn">Live Dashboard <span class="live-dot"></span></a>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="brand-badge">Mini Paper</div>
+            <h1 id="main-title">Brand Collaboration</h1>
+            <p class="subtitle" id="main-subtitle">Telkomsel x Nike Digital Recruitment System</p>
+        </header>
+        
+        <div id="paper-content">
+            <div style="text-align: center; padding: 50px;">
+               <div class="live-dot" style="display:inline-block; width:15px; height:15px;"></div> Fetching academic paper...
+            </div>
+        </div>
+    
+        <footer>
+            <div class="footer-copyright">
+                &copy; 2026 - Telkomsel x Nike Innovation Recruitment Dashboard.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        fetch('nike_vibe_recruitment/src/assets/MiniPaper_BrandCollab.json')
+            .then(response => response.json())
+            .then(data => {
+                const konten = data.konten;
+                const container = document.getElementById('paper-content');
+                container.innerHTML = ''; // Clear loading text
+
+                function createSection(title, contentHTML) {
+                    const sec = document.createElement('section');
+                    sec.className = 'paper-section';
+                    sec.innerHTML = `<h2>${title}</h2>${contentHTML}`;
+                    container.appendChild(sec);
+                }
+
+                // Introduction
+                createSection('Introduction', konten.introduction.map(p => `<p>${p}</p>`).join(''));
+
+                // Conceptual Framework
+                let cfHTML = konten.conceptual_framework.deskripsi_umum.map(p => `<p>${p}</p>`).join('');
+                cfHTML += `
+                <div class="concept-frame">
+                    <h3>Komponen Utama</h3>
+                    <ul>
+                        <li><strong style="color: #ff0a33;">Input:</strong> ${konten.conceptual_framework.komponen_utama.input}</li>
+                        <li><strong style="color: #ff0a33;">Process:</strong> ${konten.conceptual_framework.komponen_utama.process}</li>
+                        <li><strong style="color: #ff0a33;">Output:</strong> ${konten.conceptual_framework.komponen_utama.output}</li>
+                    </ul>
+                </div>`;
+                cfHTML += `<p>${konten.conceptual_framework.kesimpulan_kerangka}</p>`;
+                cfHTML += `
+                <div class="concept-frame">
+                    <h3>Ilustrasi Konseptual Model Framework</h3>
+                    <p><em>${konten.conceptual_framework.ilustrasi_konseptual_model_framework.deskripsi}</em></p>
+                    <ul>
+                        <li><strong style="color: #00ffff;">Input:</strong> ${konten.conceptual_framework.ilustrasi_konseptual_model_framework.input.join(', ')}</li>
+                        <li><strong style="color: #00ffff;">Process:</strong> ${konten.conceptual_framework.ilustrasi_konseptual_model_framework.process.join(', ')}</li>
+                        <li><strong style="color: #00ffff;">Output:</strong> ${konten.conceptual_framework.ilustrasi_konseptual_model_framework.output.join(', ')}</li>
+                    </ul>
+                </div>`;
+                createSection('Conceptual Framework', cfHTML);
+
+                // Method
+                createSection('Method', konten.method.map(p => `<p>${p}</p>`).join(''));
+
+                // Results
+                let resHTML = konten.results.deskripsi_awal.map(p => `<p>${p}</p>`).join('');
+                resHTML += `<ul>${konten.results.aspek_rekrutmen.map(l => `<li>${l}</li>`).join('')}</ul>`;
+                resHTML += konten.results.deskripsi_lanjutan.map(p => `<p>${p}</p>`).join('');
+                createSection('Results', resHTML);
+
+                // Implementation
+                createSection('Implementation', konten.implementation.map(p => `<p>${p}</p>`).join(''));
+
+                // Discussion
+                createSection('Discussion', konten.discussion.map(p => `<p>${p}</p>`).join(''));
+
+                // Conclusion
+                createSection('Conclusion', konten.conclusion.map(p => `<p>${p}</p>`).join(''));
+
+                // Daftar Pustaka
+                createSection('Daftar Pustaka', `<ul style="list-style-type: square; padding-left: 20px;">${konten.daftar_pustaka.map(l => `<li>${l}</li>`).join('')}</ul>`);
+            })
+            .catch(error => {
+                document.getElementById('paper-content').innerHTML = `
+                <div class="paper-section" style="border-color: red; text-align: center;">
+                    <h2 style="color: red;">Error</h2>
+                    <p>Failed to load the Brand Collaboration Mini Paper. Please ensure the JSON file is available.</p>
+                </div>
+                `;
+                console.error('Error fetching paper data:', error);
+            });
+    </script>
+</body>
+</html>
