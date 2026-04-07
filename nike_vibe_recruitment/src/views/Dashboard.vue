@@ -78,6 +78,9 @@ watchEffect(() => {
           <div class="silhouette-placeholder" :class="{'wiped': isDataRemoved}">
              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 4v.01M16 4v.01M10.5 8.5l-2.5-3M13.5 8.5l2.5-3M12 15l-3 5M12 15l3 5M12 8v7M9.5 12h5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
+          <div v-if="!isDataRemoved" class="status-overlay">
+             <div class="status-tag">{{ activeCandidate.recruitment_status.replace('_', ' ') }}</div>
+          </div>
           <div v-if="isDataRemoved" class="purge-text">LEXGUARD EXECUTED</div>
        </div>
 
@@ -95,7 +98,7 @@ watchEffect(() => {
           </div>
           
           <div class="box-panel gauge-panel">
-             <h3>GLOBAL VIBE SCORE</h3>
+             <h3>CANDIDATE PERFORMANCE INDEX</h3>
              <div class="gauge-wrap">
                <Doughnut :data="gaugeData" :options="gaugeOptions" />
                <div class="gauge-text" :class="{'wiped-text': isDataRemoved}">
@@ -220,6 +223,28 @@ watchEffect(() => {
   font-family: 'Teko', sans-serif;
   font-size: 2rem;
   border-radius: 4px;
+}
+
+.status-overlay {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.status-tag {
+  color: #ff0a33;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 10, 51, 0.5);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 0;
+  border-top: 1px solid rgba(255, 10, 51, 0.3);
+  border-bottom: 1px solid rgba(255, 10, 51, 0.3);
 }
 
 .connection-stats {

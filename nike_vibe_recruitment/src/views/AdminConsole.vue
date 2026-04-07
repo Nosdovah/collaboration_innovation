@@ -83,7 +83,7 @@ async function triggerLexGuard(candidateId) {
          <div class="m-val">{{ activeCandidate.skill_metrics.endurance }}</div>
        </div>
        <div class="metric-row">
-         <div class="m-label">Focus (5G)</div>
+         <div class="m-label">Focus</div>
          <div class="m-bar-bg"><div class="m-bar-fill pulse-bar" :style="{width: activeCandidate.skill_metrics.focus_5g + '%'}"></div></div>
          <div class="m-val">{{ activeCandidate.skill_metrics.focus_5g }}</div>
        </div>
