@@ -76,7 +76,7 @@ watchEffect(() => {
        <div class="figure-container">
           <!-- Placeholder for human shape -->
           <div class="silhouette-placeholder" :class="{'wiped': isDataRemoved}">
-             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 4v.01M16 4v.01M10.5 8.5l-2.5-3M13.5 8.5l2.5-3M12 15l-3 5M12 15l3 5M12 8v7M9.5 12h5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
           </div>
           <div v-if="!isDataRemoved" class="status-overlay">
              <div class="status-tag">{{ activeCandidate.recruitment_status.replace('_', ' ') }}</div>
