@@ -35,25 +35,25 @@ async function triggerLexGuard(candidateId) {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(c, index) in candidates" :key="c.id" 
+          <tr v-for="(c, index) in candidates" :key="c.kandidat_id" 
               @click="selectCandidate(c)"
-              :class="{'purged': c.vibe_score === 0, 'active-row': activeCandidate && activeCandidate.id === c.id}">
+              :class="{'purged': c.indeks_performa_kandidat.skor_keseluruhan === 0, 'active-row': activeCandidate && activeCandidate.kandidat_id === c.kandidat_id}">
             <td class="rank">{{ index + 1 }}</td>
             <td>
               <div class="candidate-info">
                  <svg class="avatar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
-                 <span>{{ c.name }}</span>
-                 <span class="id-tag">ID:{{ c.id }}</span>
+                 <span>{{ c.profil_dasar.nama_kandidat }}</span>
+                 <span class="id-tag">ID:{{ c.kandidat_id }}</span>
               </div>
             </td>
-            <td class="score" :class="{'score-bad': c.vibe_score === 0}">
-               {{ c.vibe_score === 0 ? 'ELIMINATED' : c.vibe_score }}
+            <td class="score" :class="{'score-bad': c.indeks_performa_kandidat.skor_keseluruhan === 0}">
+               {{ c.indeks_performa_kandidat.skor_keseluruhan === 0 ? 'ELIMINATED' : c.indeks_performa_kandidat.skor_keseluruhan }}
             </td>
             <td>
               <button 
                 class="lexguard-btn" 
-                @click.stop="triggerLexGuard(c.id)"
-                :disabled="c.vibe_score === 0">
+                @click.stop="triggerLexGuard(c.kandidat_id)"
+                :disabled="c.indeks_performa_kandidat.skor_keseluruhan === 0">
                 PURGE
               </button>
             </td>
@@ -63,34 +63,34 @@ async function triggerLexGuard(candidateId) {
     </div>
 
     <div class="panel-header mt-4">
-      <h2>SKILL METRICS <span v-if="activeCandidate">({{ activeCandidate.name }})</span></h2>
+      <h2>SKILL METRICS <span v-if="activeCandidate">({{ activeCandidate.profil_dasar.nama_kandidat }})</span></h2>
     </div>
     
     <div class="metrics-card" v-if="activeCandidate">
        <div class="metric-row">
          <div class="m-label">Speed</div>
-         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.skill_metrics.speed + '%'}"></div></div>
-         <div class="m-val">{{ activeCandidate.skill_metrics.speed }}</div>
+         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.indeks_performa_kandidat.speed + '%'}"></div></div>
+         <div class="m-val">{{ activeCandidate.indeks_performa_kandidat.speed }}</div>
        </div>
        <div class="metric-row">
          <div class="m-label">Agility</div>
-         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.skill_metrics.agility + '%'}"></div></div>
-         <div class="m-val">{{ activeCandidate.skill_metrics.agility }}</div>
+         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.indeks_performa_kandidat.agility + '%'}"></div></div>
+         <div class="m-val">{{ activeCandidate.indeks_performa_kandidat.agility }}</div>
        </div>
        <div class="metric-row">
          <div class="m-label">Endurance</div>
-         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.skill_metrics.endurance + '%'}"></div></div>
-         <div class="m-val">{{ activeCandidate.skill_metrics.endurance }}</div>
+         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.indeks_performa_kandidat.endurance + '%'}"></div></div>
+         <div class="m-val">{{ activeCandidate.indeks_performa_kandidat.endurance }}</div>
        </div>
        <div class="metric-row">
          <div class="m-label">Focus</div>
-         <div class="m-bar-bg"><div class="m-bar-fill pulse-bar" :style="{width: activeCandidate.skill_metrics.focus_5g + '%'}"></div></div>
-         <div class="m-val">{{ activeCandidate.skill_metrics.focus_5g }}</div>
+         <div class="m-bar-bg"><div class="m-bar-fill pulse-bar" :style="{width: activeCandidate.indeks_performa_kandidat.focus_5g + '%'}"></div></div>
+         <div class="m-val">{{ activeCandidate.indeks_performa_kandidat.focus_5g }}</div>
        </div>
        <div class="metric-row">
          <div class="m-label">Teamwork</div>
-         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.skill_metrics.teamwork + '%'}"></div></div>
-         <div class="m-val">{{ activeCandidate.skill_metrics.teamwork }}</div>
+         <div class="m-bar-bg"><div class="m-bar-fill" :style="{width: activeCandidate.indeks_performa_kandidat.teamwork + '%'}"></div></div>
+         <div class="m-val">{{ activeCandidate.indeks_performa_kandidat.teamwork }}</div>
        </div>
     </div>
   </div>

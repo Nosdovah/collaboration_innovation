@@ -1,290 +1,518 @@
 [
     {
-        "id": 1,
-        "name": "Muhammad Zhafran",
-        "vibe_score": 91,
-        "recruitment_status": "PRO_CERTIFIED",
-        "biometrics": {
-            "heart_rate": 168,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 56.4,
-            "muscle_activation_pct": 92,
-            "velocity_kmh": 32
+        "kandidat_id": "NV-2026-001",
+        "profil_dasar": {
+            "nama_kandidat": "Raihan Akbar",
+            "lokasi": "Bogor, Jawa Barat",
+            "recruitment_status": "PRO_CERTIFIED",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 168,
+            "vo2_max": 56.4,
+            "aktivasi_otot_pct": 92,
+            "kecepatan_kmh": 32
+        },
+        "indeks_performa_kandidat": {
             "speed": 85,
             "agility": 92,
             "endurance": 78,
             "focus_5g": 98,
-            "teamwork": 60
+            "teamwork": 60,
+            "skor_keseluruhan": 91
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "05:00 WIB",
+            "ritme_olahraga": "Konsisten - Tinggi",
+            "skor_disiplin": 94,
+            "fluktuasi_pemulihan_detak_jantung": "Optimal",
+            "skor_resiliensi_mental_juara": 92
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 12,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 2,
-        "name": "Ryan Adriansyah",
-        "vibe_score": 65,
-        "recruitment_status": "ANOMALOUS_DATA",
-        "biometrics": {
-            "heart_rate": 185,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 42.1,
-            "muscle_activation_pct": 65,
-            "velocity_kmh": 12
+        "kandidat_id": "NV-2026-002",
+        "profil_dasar": {
+            "nama_kandidat": "Jane Doe",
+            "lokasi": "Jakarta Pusat, DKI Jakarta",
+            "recruitment_status": "ANOMALOUS_DATA",
+            "status_verifikasi": "RE-TEST_REQUIRED"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 185,
+            "vo2_max": 42.1,
+            "aktivasi_otot_pct": 65,
+            "kecepatan_kmh": 12
+        },
+        "indeks_performa_kandidat": {
             "speed": 45,
             "agility": 50,
             "endurance": 55,
             "focus_5g": 88,
-            "teamwork": 72
+            "teamwork": 72,
+            "skor_keseluruhan": 65
         },
-        "validation": {
-            "status": "RE-TEST_REQUIRED",
-            "flag": "ANOMALOUS_BIO"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "Fluktuatif",
+            "ritme_olahraga": "Tidak Teratur",
+            "skor_disiplin": 60,
+            "fluktuasi_pemulihan_detak_jantung": "Sub-Optimal",
+            "skor_resiliensi_mental_juara": 58
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 18,
+            "kecocokan_gps_biometrik": false,
+            "bebas_anomali": false,
+            "flag_validasi": "ANOMALOUS_BIO"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 3,
-        "name": "Ahmad Subagja",
-        "vibe_score": 88,
-        "recruitment_status": "ELITE_RECRUIT",
-        "biometrics": {
-            "heart_rate": 162,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 64.2,
-            "muscle_activation_pct": 95,
-            "velocity_kmh": 36
+        "kandidat_id": "NV-2026-003",
+        "profil_dasar": {
+            "nama_kandidat": "Ahmad Subagja",
+            "lokasi": "Bandung, Jawa Barat",
+            "recruitment_status": "ELITE_RECRUIT",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 162,
+            "vo2_max": 64.2,
+            "aktivasi_otot_pct": 95,
+            "kecepatan_kmh": 36
+        },
+        "indeks_performa_kandidat": {
             "speed": 94,
             "agility": 88,
             "endurance": 90,
             "focus_5g": 82,
-            "teamwork": 85
+            "teamwork": 85,
+            "skor_keseluruhan": 88
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "04:30 WIB",
+            "ritme_olahraga": "Konsisten - Ekstrem",
+            "skor_disiplin": 96,
+            "fluktuasi_pemulihan_detak_jantung": "Sangat Cepat",
+            "skor_resiliensi_mental_juara": 95
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 9,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 4,
-        "name": "Siti Sarah",
-        "vibe_score": 74,
-        "recruitment_status": "VARSITY_POTENTIAL",
-        "biometrics": {
-            "heart_rate": 155,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 51.8,
-            "muscle_activation_pct": 80,
-            "velocity_kmh": 26
+        "kandidat_id": "NV-2026-004",
+        "profil_dasar": {
+            "nama_kandidat": "Siti Sarah",
+            "lokasi": "Surabaya, Jawa Timur",
+            "recruitment_status": "VARSITY_POTENTIAL",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 155,
+            "vo2_max": 51.8,
+            "aktivasi_otot_pct": 80,
+            "kecepatan_kmh": 26
+        },
+        "indeks_performa_kandidat": {
             "speed": 70,
             "agility": 85,
             "endurance": 75,
             "focus_5g": 92,
-            "teamwork": 65
+            "teamwork": 65,
+            "skor_keseluruhan": 74
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "05:30 WIB",
+            "ritme_olahraga": "Cukup Konsisten",
+            "skor_disiplin": 82,
+            "fluktuasi_pemulihan_detak_jantung": "Normal",
+            "skor_resiliensi_mental_juara": 78
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 14,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 5,
-        "name": "Budi Santoso",
-        "vibe_score": 42,
-        "recruitment_status": "LOCATION_DISCREPANCY",
-        "biometrics": {
-            "heart_rate": 110,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 38.5,
-            "muscle_activation_pct": 50,
-            "velocity_kmh": 45
+        "kandidat_id": "NV-2026-005",
+        "profil_dasar": {
+            "nama_kandidat": "Budi Santoso",
+            "lokasi": "Pelosok, Luar Zona 5G",
+            "recruitment_status": "LOCATION_DISCREPANCY",
+            "status_verifikasi": "REJECTED"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 110,
+            "vo2_max": 38.5,
+            "aktivasi_otot_pct": 50,
+            "kecepatan_kmh": 45
+        },
+        "indeks_performa_kandidat": {
             "speed": 98,
             "agility": 40,
             "endurance": 45,
             "focus_5g": 20,
-            "teamwork": 80
+            "teamwork": 80,
+            "skor_keseluruhan": 42
         },
-        "validation": {
-            "status": "REJECTED",
-            "flag": "OUTSIDE_ZONE_5G"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "Tidak Dikenali",
+            "ritme_olahraga": "Anomali Data",
+            "skor_disiplin": 45,
+            "fluktuasi_pemulihan_detak_jantung": "Tidak Valid",
+            "skor_resiliensi_mental_juara": 40
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Jaringan Non-5G / Terputus",
+            "latensi_terestrial_ms": 145,
+            "kecocokan_gps_biometrik": false,
+            "bebas_anomali": false,
+            "flag_validasi": "OUTSIDE_ZONE_5G"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-04-08T00:00:00Z"
         }
     },
     {
-        "id": 6,
-        "name": "Linda Wijaya",
-        "vibe_score": 95,
-        "recruitment_status": "NATIONAL_SPEC",
-        "biometrics": {
-            "heart_rate": 150,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 68.5,
-            "muscle_activation_pct": 98,
-            "velocity_kmh": 34
+        "kandidat_id": "NV-2026-006",
+        "profil_dasar": {
+            "nama_kandidat": "Linda Wijaya",
+            "lokasi": "Denpasar, Bali",
+            "recruitment_status": "NATIONAL_SPEC",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 150,
+            "vo2_max": 68.5,
+            "aktivasi_otot_pct": 98,
+            "kecepatan_kmh": 34
+        },
+        "indeks_performa_kandidat": {
             "speed": 90,
             "agility": 95,
             "endurance": 98,
             "focus_5g": 100,
-            "teamwork": 90
+            "teamwork": 90,
+            "skor_keseluruhan": 95
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "04:00 WIB",
+            "ritme_olahraga": "Tingkat Atlet Nasional",
+            "skor_disiplin": 99,
+            "fluktuasi_pemulihan_detak_jantung": "Sempurna",
+            "skor_resiliensi_mental_juara": 98
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 8,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 7,
-        "name": "Deni Ramadhan",
-        "vibe_score": 82,
-        "recruitment_status": "PRO_CERTIFIED",
-        "biometrics": {
-            "heart_rate": 165,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 54.0,
-            "muscle_activation_pct": 88,
-            "velocity_kmh": 30
+        "kandidat_id": "NV-2026-007",
+        "profil_dasar": {
+            "nama_kandidat": "Deni Ramadhan",
+            "lokasi": "Tangerang, Banten",
+            "recruitment_status": "PRO_CERTIFIED",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 165,
+            "vo2_max": 54.0,
+            "aktivasi_otot_pct": 88,
+            "kecepatan_kmh": 30
+        },
+        "indeks_performa_kandidat": {
             "speed": 82,
             "agility": 80,
             "endurance": 84,
             "focus_5g": 85,
-            "teamwork": 78
+            "teamwork": 78,
+            "skor_keseluruhan": 82
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "05:15 WIB",
+            "ritme_olahraga": "Konsisten - Stabil",
+            "skor_disiplin": 88,
+            "fluktuasi_pemulihan_detak_jantung": "Optimal",
+            "skor_resiliensi_mental_juara": 85
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 11,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 8,
-        "name": "Eka Putri",
-        "vibe_score": 68,
-        "recruitment_status": "VARSITY_POTENTIAL",
-        "biometrics": {
-            "heart_rate": 148,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 46.5,
-            "muscle_activation_pct": 72,
-            "velocity_kmh": 20
+        "kandidat_id": "NV-2026-008",
+        "profil_dasar": {
+            "nama_kandidat": "Eka Putri",
+            "lokasi": "Semarang, Jawa Tengah",
+            "recruitment_status": "VARSITY_POTENTIAL",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 148,
+            "vo2_max": 46.5,
+            "aktivasi_otot_pct": 72,
+            "kecepatan_kmh": 20
+        },
+        "indeks_performa_kandidat": {
             "speed": 62,
             "agility": 70,
             "endurance": 68,
             "focus_5g": 75,
-            "teamwork": 85
+            "teamwork": 85,
+            "skor_keseluruhan": 68
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "06:00 WIB",
+            "ritme_olahraga": "Berkembang",
+            "skor_disiplin": 78,
+            "fluktuasi_pemulihan_detak_jantung": "Standar",
+            "skor_resiliensi_mental_juara": 75
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 16,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 9,
-        "name": "Fajar Sidik",
-        "vibe_score": 89,
-        "recruitment_status": "ELITE_RECRUIT",
-        "biometrics": {
-            "heart_rate": 170,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 62.8,
-            "muscle_activation_pct": 90,
-            "velocity_kmh": 33
+        "kandidat_id": "NV-2026-009",
+        "profil_dasar": {
+            "nama_kandidat": "Fajar Sidik",
+            "lokasi": "Makassar, Sulawesi Selatan",
+            "recruitment_status": "ELITE_RECRUIT",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 170,
+            "vo2_max": 62.8,
+            "aktivasi_otot_pct": 90,
+            "kecepatan_kmh": 33
+        },
+        "indeks_performa_kandidat": {
             "speed": 88,
             "agility": 85,
             "endurance": 92,
             "focus_5g": 80,
-            "teamwork": 70
+            "teamwork": 70,
+            "skor_keseluruhan": 89
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "04:45 WIB",
+            "ritme_olahraga": "Konsisten - Sangat Tinggi",
+            "skor_disiplin": 93,
+            "fluktuasi_pemulihan_detak_jantung": "Cepat",
+            "skor_resiliensi_mental_juara": 91
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 10,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 10,
-        "name": "Gita Permata",
-        "vibe_score": 79,
-        "recruitment_status": "PRO_CERTIFIED",
-        "biometrics": {
-            "heart_rate": 158,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 52.6,
-            "muscle_activation_pct": 84,
-            "velocity_kmh": 28
+        "kandidat_id": "NV-2026-010",
+        "profil_dasar": {
+            "nama_kandidat": "Gita Permata",
+            "lokasi": "Yogyakarta, DIY",
+            "recruitment_status": "PRO_CERTIFIED",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 158,
+            "vo2_max": 52.6,
+            "aktivasi_otot_pct": 84,
+            "kecepatan_kmh": 28
+        },
+        "indeks_performa_kandidat": {
             "speed": 75,
             "agility": 88,
             "endurance": 70,
             "focus_5g": 95,
-            "teamwork": 90
+            "teamwork": 90,
+            "skor_keseluruhan": 79
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "05:00 WIB",
+            "ritme_olahraga": "Konsisten",
+            "skor_disiplin": 89,
+            "fluktuasi_pemulihan_detak_jantung": "Optimal",
+            "skor_resiliensi_mental_juara": 86
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 13,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     },
     {
-        "id": 11,
-        "name": "Hadi Kurniawan",
-        "vibe_score": 55,
-        "recruitment_status": "BIOLOGICAL_IMPLAUSIBLE",
-        "biometrics": {
-            "heart_rate": 140,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 45.0,
-            "muscle_activation_pct": 60,
-            "velocity_kmh": 52
+        "kandidat_id": "NV-2026-011",
+        "profil_dasar": {
+            "nama_kandidat": "Hadi Kurniawan",
+            "lokasi": "Batam, Kepulauan Riau",
+            "recruitment_status": "BIOLOGICAL_IMPLAUSIBLE",
+            "status_verifikasi": "FLAGGED"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 140,
+            "vo2_max": 45.0,
+            "aktivasi_otot_pct": 60,
+            "kecepatan_kmh": 52
+        },
+        "indeks_performa_kandidat": {
             "speed": 100,
             "agility": 55,
             "endurance": 60,
             "focus_5g": 40,
-            "teamwork": 50
+            "teamwork": 50,
+            "skor_keseluruhan": 55
         },
-        "validation": {
-            "status": "FLAGGED",
-            "flag": "INCONSISTENT_STRIDE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "Tidak Beraturan",
+            "ritme_olahraga": "Manipulatif / Berkendara",
+            "skor_disiplin": 30,
+            "fluktuasi_pemulihan_detak_jantung": "Tidak Valid",
+            "skor_resiliensi_mental_juara": 25
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 22,
+            "kecocokan_gps_biometrik": false,
+            "bebas_anomali": false,
+            "flag_validasi": "INCONSISTENT_STRIDE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-04-08T00:00:00Z"
         }
     },
     {
-        "id": 12,
-        "name": "Indah Lestari",
-        "vibe_score": 93,
-        "recruitment_status": "NATIONAL_SPEC",
-        "biometrics": {
-            "heart_rate": 154,
-            "heart_rate_unit": "bpm",
-            "vo2_max": 66.7,
-            "muscle_activation_pct": 96,
-            "velocity_kmh": 35
+        "kandidat_id": "NV-2026-012",
+        "profil_dasar": {
+            "nama_kandidat": "Indah Lestari",
+            "lokasi": "Malang, Jawa Timur",
+            "recruitment_status": "NATIONAL_SPEC",
+            "status_verifikasi": "VERIFIED_PRO"
         },
-        "skill_metrics": {
+        "data_mentah_biomekanik": {
+            "detak_jantung_bpm": 154,
+            "vo2_max": 66.7,
+            "aktivasi_otot_pct": 96,
+            "kecepatan_kmh": 35
+        },
+        "indeks_performa_kandidat": {
             "speed": 92,
             "agility": 92,
             "endurance": 95,
             "focus_5g": 98,
-            "teamwork": 94
+            "teamwork": 94,
+            "skor_keseluruhan": 93
         },
-        "validation": {
-            "status": "VERIFIED_PRO",
-            "flag": "NONE"
+        "biometrik_perilaku_ai": {
+            "interval_analisis": "30 Hari",
+            "konsistensi_jam_bangun": "04:15 WIB",
+            "ritme_olahraga": "Tingkat Atlet Profesional",
+            "skor_disiplin": 97,
+            "fluktuasi_pemulihan_detak_jantung": "Sangat Sempurna",
+            "skor_resiliensi_mental_juara": 96
+        },
+        "validasi_anti_spoofing": {
+            "penyedia_jaringan": "Telkomsel 5G",
+            "latensi_terestrial_ms": 11,
+            "kecocokan_gps_biometrik": true,
+            "bebas_anomali": true,
+            "flag_validasi": "NONE"
+        },
+        "kepatuhan_privasi_pdp": {
+            "enkripsi_data_at_rest": "AES-256",
+            "status_soft_delete": false,
+            "jadwal_physical_ttl_purge": "2026-05-07T00:00:00Z"
         }
     }
 ]

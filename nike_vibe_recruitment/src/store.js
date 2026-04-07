@@ -8,7 +8,7 @@ export function selectCandidate(c) {
   activeCandidate.value = c
 }
 
-export function purgeCandidate(id) {
-  const c = candidates.value.find(x => x.id === id)
-  if (c) c.vibe_score = 0
+export function purgeCandidate(kandidat_id) {
+  const c = candidates.value.find(x => x.kandidat_id === kandidat_id)
+  if (c) c.indeks_performa_kandidat.skor_keseluruhan = 0
 }

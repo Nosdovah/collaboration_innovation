@@ -8,8 +8,8 @@ import {
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement)
 
-const isDataRemoved = computed(() => !activeCandidate.value || activeCandidate.value.vibe_score === 0)
-const vibeScore = computed(() => activeCandidate.value ? activeCandidate.value.vibe_score : 0)
+const isDataRemoved = computed(() => !activeCandidate.value || activeCandidate.value.indeks_performa_kandidat.skor_keseluruhan === 0)
+const vibeScore = computed(() => activeCandidate.value ? activeCandidate.value.indeks_performa_kandidat.skor_keseluruhan : 0)
 
 const gaugeData = ref({
   labels: ['Score', 'Remaining'],
@@ -46,7 +46,7 @@ watchEffect(() => {
   <div class="dash-panel" v-if="activeCandidate">
     <!-- Active Candidate Header -->
     <div class="candidate-header">
-       <div class="c-title">CANDIDATE: {{ activeCandidate.name.toUpperCase() }}</div>
+       <div class="c-title">CANDIDATE: {{ activeCandidate.profil_dasar.nama_kandidat.toUpperCase() }}</div>
        <div class="c-subtitle">LIVE BIOMECHANICAL DATA <span v-if="!isDataRemoved" class="ar-badge">AR Overlay Active</span> <span v-else class="ar-badge-off">DATA PURGED</span></div>
     </div>
 
@@ -56,19 +56,19 @@ watchEffect(() => {
           <h3>BIOMETRICS</h3>
           <div class="stat-box">
              <div class="s-label">Heart Rate</div>
-             <div class="s-val">{{ activeCandidate.biometrics.heart_rate }} {{ activeCandidate.biometrics.heart_rate_unit || 'bpm' }}</div>
+             <div class="s-val">{{ activeCandidate.data_mentah_biomekanik.detak_jantung_bpm }} bpm</div>
           </div>
           <div class="stat-box">
              <div class="s-label">VO2 Max</div>
-             <div class="s-val">{{ activeCandidate.biometrics.vo2_max }}</div>
+             <div class="s-val">{{ activeCandidate.data_mentah_biomekanik.vo2_max }}</div>
           </div>
           <div class="stat-box">
              <div class="s-label">Muscle Activation</div>
-             <div class="s-val">{{ activeCandidate.biometrics.muscle_activation_pct }}%</div>
+             <div class="s-val">{{ activeCandidate.data_mentah_biomekanik.aktivasi_otot_pct }}%</div>
           </div>
           <div class="stat-box">
              <div class="s-label">Velocity</div>
-             <div class="s-val">{{ activeCandidate.biometrics.velocity_kmh }} km/h</div>
+             <div class="s-val">{{ activeCandidate.data_mentah_biomekanik.kecepatan_kmh }} km/h</div>
           </div>
        </div>
        
@@ -79,7 +79,7 @@ watchEffect(() => {
              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
           </div>
           <div v-if="!isDataRemoved" class="status-overlay">
-             <div class="status-tag">{{ activeCandidate.recruitment_status.replace('_', ' ') }}</div>
+             <div class="status-tag">{{ activeCandidate.profil_dasar.recruitment_status.replace('_', ' ') }}</div>
           </div>
           <div v-if="isDataRemoved" class="purge-text">LEXGUARD EXECUTED</div>
        </div>
@@ -94,7 +94,7 @@ watchEffect(() => {
                 <div class="bar bar-3"></div>
                 <div class="bar bar-4 pulse-bar"></div>
              </div>
-             <div class="latency">Latency: <span class="ms">4ms</span></div>
+              <div class="latency">Latency: <span class="ms">{{ activeCandidate.validasi_anti_spoofing.latensi_terestrial_ms }}ms</span></div>
           </div>
           
           <div class="box-panel gauge-panel">
@@ -112,24 +112,24 @@ watchEffect(() => {
     <!-- Bottom Compliance & AI Panel -->
     <div class="bottom-panel" v-if="!isDataRemoved">
        <div class="info-card ai-card">
-          <div class="card-header">AI LOKAL (OLLAMA)</div>
+          <div class="card-header">AI LOKAL BIOMETRIK PERILAKU</div>
           <div class="card-body status-active">
              <div class="blinking-dot"></div>
-             <span>AKTIF (Pemrosesan Aman 100% On-Premise)</span>
+             <span>Disiplin: {{ activeCandidate.biometrik_perilaku_ai.skor_disiplin }} | Mental: {{ activeCandidate.biometrik_perilaku_ai.skor_resiliensi_mental_juara }}</span>
           </div>
        </div>
        
        <div class="info-card compliance-card">
           <div class="card-header">UU PDP COMPLIANCE</div>
           <div class="card-body status-green">
-             <span>AMAT PATUH (85/100)</span>
+             <span>ENKRIPSI: {{ activeCandidate.kepatuhan_privasi_pdp.enkripsi_data_at_rest }}</span>
           </div>
        </div>
 
        <div class="info-card risk-card">
-          <div class="card-header">PERINGATAN CELAH RISIKO</div>
-          <div class="card-body alert-red">
-             <span>⚠️ 3 Gaps Found: NIK Terbuka di Turso DB</span>
+          <div class="card-header">ANTI-SPOOFING VALIDATION</div>
+          <div class="card-body" :class="{'status-green': activeCandidate.validasi_anti_spoofing.bebas_anomali, 'alert-red': !activeCandidate.validasi_anti_spoofing.bebas_anomali}">
+             <span>{{ activeCandidate.validasi_anti_spoofing.bebas_anomali ? '✔️ BEBAS ANOMALI' : '⚠️ ANOMALI: ' + activeCandidate.validasi_anti_spoofing.flag_validasi }}</span>
           </div>
        </div>
 
