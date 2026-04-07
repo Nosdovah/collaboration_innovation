@@ -1,0 +1,7 @@
+{
+  "name": "collaboration-innovation-master",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd nike_vibe_recruitment && npm install && npm run build && cd .. && mkdir -p out/dashboard && cp -r nike_vibe_recruitment/dist/* out/dashboard/ && cp index.html style.css script.js hero.png out/ && cp *.json out/ && cp -r images out/"
+  }
+}
