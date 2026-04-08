@@ -1,0 +1,334 @@
+/* rpg_stats.css */
+
+.hud-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: var(--text-main);
+}
+
+.hud-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.glow-badge {
+    background: transparent;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 10px rgba(238, 20, 36, 0.5), inset 0 0 10px rgba(238, 20, 36, 0.2);
+    color: var(--primary);
+    animation: pulseBorder 2s infinite;
+}
+
+@keyframes pulseBorder {
+    0% { box-shadow: 0 0 10px rgba(238, 20, 36, 0.5), inset 0 0 10px rgba(238, 20, 36, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(238, 20, 36, 0.8), inset 0 0 20px rgba(238, 20, 36, 0.5); }
+    100% { box-shadow: 0 0 10px rgba(238, 20, 36, 0.5), inset 0 0 10px rgba(238, 20, 36, 0.2); }
+}
+
+.rpg-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr 400px;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.glass-panel {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(238, 20, 36, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(238, 20, 36, 0.15);
+}
+
+/* Cyberpunk elements */
+.cyber-scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0.5;
+    animation: scanline 4s linear infinite;
+    z-index: 10;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+.panel-header {
+    margin-bottom: 2rem;
+}
+
+.panel-header h3 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+}
+
+.header-line {
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+/* Profile Panel */
+.avatar-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--primary);
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: grayscale(20%) contrast(120%);
+}
+
+.level-badge {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border: 2px solid #000;
+    letter-spacing: 1px;
+}
+
+.profile-info {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.candidate-name {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.class-title {
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.highlight-text {
+    color: #00A9E0; /* Telkomsel Blue */
+    font-weight: 800;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    color: #00ff00;
+    letter-spacing: 1px;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-left: 3px solid #00ff00;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff00;
+    animation: blink 1s infinite alternate;
+}
+
+.rank-box {
+    margin-top: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.3);
+}
+
+.rank-title {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+}
+
+.rank-value {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #FFD700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    line-height: 1;
+    margin-top: 10px;
+}
+
+/* Radar Chart Panel */
+.chart-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-legend {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Stats Bars Panel */
+.stat-bars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    width: 100%;
+}
+
+.stat-label-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.stat-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-name i {
+    color: var(--primary);
+}
+
+.stat-value {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.stat-bar-bg {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8B0000, var(--primary));
+    border-radius: 6px;
+    width: 0%;
+    transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.stat-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 10px 10px;
+    animation: moveStripes 1s linear infinite;
+}
+
+@keyframes moveStripes {
+    0% { background-position: 0 0; }
+    100% { background-position: 10px 0; }
+}
+
+.ai-assessment {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(0, 169, 224, 0.05);
+    border: 1px solid rgba(0, 169, 224, 0.2);
+    border-radius: 10px;
+    border-left: 4px solid #00A9E0;
+}
+
+.ai-assessment h4 {
+    color: #00A9E0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.ai-assessment p {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+    .rpg-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .radar-panel {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .rpg-grid {
+        grid-template-columns: 1fr;
+    }
+    .hud-container {
+        padding: 1rem;
+    }
+}

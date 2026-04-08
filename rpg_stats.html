@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike-Vibe | Candidate RPG Stats</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rpg_stats.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div class="nav-content">
+            <div class="nav-logo">NIKE-VIBE</div>
+            <div class="nav-links">
+                <a href="index.html">Innovation Concept</a>
+                <a href="brand_collaboration.html">Brand Collaboration</a>
+                <a href="rpg_stats.html" class="active">Candidate Stats</a>
+                <a href="/dashboard/" class="dashboard-btn">Live Dashboard <span class="live-dot"></span></a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- HUD Grid -->
+    <div class="hud-container">
+        <!-- Header -->
+        <header class="hud-header">
+            <div class="brand-badge glow-badge">VERIFIED_PRO</div>
+            <h1>BIONIC METADATA</h1>
+            <p class="subtitle">Candidate Performance Index (CPI) Evaluation Unit</p>
+        </header>
+
+        <div class="rpg-grid">
+            <!-- Left Panel: Profile -->
+            <div class="hud-panel profile-panel glass-panel">
+                <div class="cyber-scanline"></div>
+                <div class="avatar-container">
+                    <img src="hero.png" alt="Candidate" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=300&auto=format&fit=crop'">
+                    <div class="level-badge">LVL 84</div>
+                </div>
+                <div class="profile-info">
+                    <h2 class="candidate-name" id="c-name">Loading...</h2>
+                    <div class="class-title">Class: <span class="highlight-text" id="c-class">---</span></div>
+                    <div class="class-title">ID: <span id="c-id">---</span></div>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span>STATUS: OPTIMAL</span>
+                    </div>
+                    
+                    <div class="rank-box">
+                        <div class="rank-title">OVERALL RANK</div>
+                        <div class="rank-value" id="c-rank">S</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Panel: Radar Chart -->
+            <div class="hud-panel radar-panel glass-panel">
+                <div class="cyber-scanline"></div>
+                <div class="panel-header">
+                    <h3>COMBAT & UTILITY STATS</h3>
+                    <div class="header-line"></div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="rpgRadarChart"></canvas>
+                </div>
+                <div class="chart-legend">
+                    Mapping bio-feedback to core attributes
+                </div>
+            </div>
+
+            <!-- Right Panel: Stat Bars -->
+            <div class="hud-panel stats-panel glass-panel">
+                <div class="cyber-scanline"></div>
+                <div class="panel-header">
+                    <h3>BIOMETRIC BREAKDOWN</h3>
+                    <div class="header-line"></div>
+                </div>
+                <div class="stat-bars-container" id="stat-bars-container">
+                    <!-- Injected by JS -->
+                </div>
+                
+                <div class="ai-assessment">
+                    <h4>AI TACTICAL ASSESSMENT</h4>
+                    <p id="c-assessment">Analyzing applicant potential through continuous telemetry data... Please stand by.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-copyright">
+            &copy; 2026 - Telkomsel x Nike Innovation Recruitment Dashboard.
+        </div>
+    </footer>
+
+    <script src="rpg_script.js"></script>
+</body>
+
+</html>
