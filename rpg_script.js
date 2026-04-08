@@ -568,12 +568,12 @@ function renderCandidate(cData) {
     else if (ipk.skor_keseluruhan >= 70) rank = "B";
     document.getElementById('c-rank').textContent = rank;
     
-    document.querySelector('.level-badge').textContent = \`LVL \${ipk.skor_keseluruhan}\`;
+    document.querySelector('.level-badge').textContent = `LVL ${ipk.skor_keseluruhan}`;
     
     const assessmentParts = [];
-    assessmentParts.push(\`Status Verifikasi: \${pInfo.status_verifikasi}.\`);
-    assessmentParts.push(\`Analisis \${ai.interval_analisis}: Ritme \${ai.ritme_olahraga}.\`);
-    assessmentParts.push(\`Pemulihan HR: \${ai.fluktuasi_pemulihan_detak_jantung}.\`);
+    assessmentParts.push(`Status Verifikasi: ${pInfo.status_verifikasi}.`);
+    assessmentParts.push(`Analisis ${ai.interval_analisis}: Ritme ${ai.ritme_olahraga}.`);
+    assessmentParts.push(`Pemulihan HR: ${ai.fluktuasi_pemulihan_detak_jantung}.`);
     document.getElementById('c-assessment').textContent = assessmentParts.join(" ");
 
     const badge = document.getElementById('hud-badge');
@@ -605,15 +605,15 @@ function renderCandidate(cData) {
     attributes.forEach((attr) => {
         const statItem = document.createElement('div');
         statItem.className = 'stat-item';
-        statItem.innerHTML = \`
+        statItem.innerHTML = `
             <div class="stat-label-container">
-                <span class="stat-name">\${attr.icon} \${attr.name}</span>
-                <span class="stat-value">\${attr.value}</span>
+                <span class="stat-name">${attr.icon} ${attr.name}</span>
+                <span class="stat-value">${attr.value}</span>
             </div>
             <div class="stat-bar-bg">
-                <div class="stat-bar-fill" style="width: 0%;" data-target="\${attr.value}"></div>
+                <div class="stat-bar-fill" style="width: 0%;" data-target="${attr.value}"></div>
             </div>
-        \`;
+        `;
         barsContainer.appendChild(statItem);
     });
 
