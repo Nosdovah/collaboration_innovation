@@ -27,12 +27,6 @@ body {
     transition: padding 0.3s ease;
 }
 
-@media (max-width: 992px) {
-    body {
-        padding-left: 0;
-        padding-top: 80px;
-    }
-}
 
 /* Main Navigation (Sidebar Mode) */
 .main-nav {
@@ -63,6 +57,11 @@ body {
     font-size: 1.5rem;
     letter-spacing: 2px;
     color: var(--secondary);
+    z-index: 2000;
+}
+
+.menu-toggle {
+    display: none;
 }
 
 .nav-links {
@@ -132,9 +131,6 @@ body {
     opacity: 0.6;
 }
 
-@media (max-width: 992px) {
-    .nav-sidebar-footer { display: none; }
-}
 
 .live-dot {
     width: 8px;
@@ -581,39 +577,98 @@ footer {
 }
 
 @media (max-width: 992px) {
+    body {
+        padding-left: 0 !important;
+        padding-top: 70px !important;
+    }
+    
     .main-nav {
-        width: 100%;
-        height: auto;
-        padding: 1rem 0;
-        border-right: none;
-        border-bottom: 1px solid var(--glass-border);
+        width: 100% !important;
+        height: 70px !important;
+        padding: 0 !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--glass-border) !important;
+        background: rgba(13, 13, 13, 0.95) !important;
+        display: flex !important;
+        align-items: center !important;
     }
+
     .nav-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1.5rem;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 1.5rem !important;
+        width: 100% !important;
+        height: 100% !important;
     }
+    
+    .nav-logo {
+        margin: 0 !important;
+    }
+    
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        cursor: pointer !important;
+        z-index: 3000 !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .menu-toggle span {
+        display: block !important;
+        width: 30px !important;
+        height: 2px !important;
+        background: #fff !important;
+        transition: 0.3s !important;
+    }
+    
     .nav-links {
-        display: flex;
-        flex-direction: row;
-        margin-top: 0;
-        gap: 1rem;
-        width: auto;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: #000 !important;
+        margin-top: 0 !important;
+        padding: 80px 2rem 2rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 1.5rem !important;
+        transition: right 0.4s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+        z-index: 2500 !important;
     }
+    
+    .nav-links.active {
+        right: 0 !important;
+    }
+    
     .nav-links a {
-        padding: 0.5rem;
-        font-size: 0.7rem;
+        font-size: 1.4rem !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 1rem !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+        margin: 0 !important;
     }
+    
     .dashboard-btn {
-        margin-top: 0;
-        padding: 0.5rem 1rem !important;
+        margin-top: 1rem !important;
+        width: 100% !important;
+        padding: 1rem !important;
     }
-    .strategy-flow { flex-direction: column; }
-    .product-hero { flex-direction: column; text-align: center; }
-    .product-info, .product-visual { flex: none; width: 100%; }
-    .product-visual { order: -1; }
-    h1 { font-size: 3rem; }
+
+    .nav-sidebar-footer { display: none !important; }
+    
+    .strategy-flow { flex-direction: column !important; }
+    .product-hero { flex-direction: column !important; text-align: center !important; }
+    .product-info, .product-visual { flex: none !important; width: 100% !important; }
+    .product-visual { order: -1 !important; }
+    h1 { font-size: 3rem !important; }
 }
 
 @media (max-width: 768px) {

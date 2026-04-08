@@ -162,6 +162,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         closeModal.onclick = () => modal.style.display = "none";
         window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; };
 
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle) {
+            menuToggle.onclick = () => {
+                navLinks.classList.toggle('active');
+            };
+        }
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.onclick = () => navLinks.classList.remove('active');
+        });
+
     } catch (error) {
         console.error('Error loading data:', error);
     }

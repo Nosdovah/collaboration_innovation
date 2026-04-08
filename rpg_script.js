@@ -539,6 +539,21 @@ document.addEventListener('DOMContentLoaded', () => {
             renderCandidate(candidate);
         }
     });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle) {
+        menuToggle.onclick = () => {
+            navLinks.classList.toggle('active');
+        };
+    }
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.onclick = () => navLinks.classList.remove('active');
+    });
 });
 
 function populateDropdown(data) {

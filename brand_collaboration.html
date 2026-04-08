@@ -69,6 +69,11 @@
     <nav class="main-nav">
         <div class="nav-content">
             <div class="nav-logo">NIKE-VIBE</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="nav-links">
                 <a href="index.html">Innovation Concept</a>
                 <a href="brand_collaboration.html" class="active">Brand Collaboration</a>
@@ -287,6 +292,19 @@
 
                 closeModal.onclick = () => modal.style.display = "none";
                 window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+
+                // Mobile Menu Toggle
+                const menuToggle = document.getElementById('mobile-menu');
+                const navLinks = document.querySelector('.nav-links');
+                
+                menuToggle.onclick = () => {
+                    navLinks.classList.toggle('active');
+                };
+
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.onclick = () => navLinks.classList.remove('active');
+                });
         });
 
         const styleSheet = document.createElement('style');
