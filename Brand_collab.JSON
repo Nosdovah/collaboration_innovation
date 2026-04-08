@@ -1,0 +1,58 @@
+{
+    "problem_statement": [
+        "Pengalaman retail olahraga masih konvensional",
+        "Banyak toko olahraga masih berfokus pada display produk tanpa pengalaman interaktif yang mendalam.",
+        "Brand engagement generasi digital menurun di retail fisik",
+        "Generasi muda lebih tertarik pada pengalaman digital dan immersive dibanding sekadar melihat produk di rak.",
+        "Kesulitan konsumen memilih produk olahraga yang sesuai",
+        "Konsumen sering tidak tahu sepatu atau apparel yang cocok dengan gaya olahraga atau bentuk tubuh mereka.",
+        "Kurangnya integrasi teknologi dalam pengalaman belanja olahraga",
+        "Walaupun teknologi seperti AR dan AI berkembang pesat, penerapannya di retail olahraga masih terbatas.",
+        "Peluang kolaborasi teknologi dan lifestyle brand belum maksimal",
+        "Perusahaan telekomunikasi memiliki infrastruktur digital, sementara brand olahraga memiliki basis komunitas besar."
+    ],
+    "scamper_methodology": {
+        "Substitute": "Mengganti pengalaman mencoba produk secara fisik dengan AR virtual try-on untuk sepatu dan apparel Nike.",
+        "Combine": "Menggabungkan teknologi jaringan Telkomsel (5G/IoT) dengan produk olahraga Nike untuk menciptakan pengalaman belanja digital interaktif.",
+        "Adapt": "Mengadaptasi teknologi Augmented Reality dari industri gaming ke dalam pengalaman retail store.",
+        "Modify": "Mengubah konsep toko dari sekadar tempat membeli produk menjadi experience-based store.",
+        "Put_to_Another_Use": "Data aktivitas olahraga pengguna dapat digunakan untuk merekomendasikan produk yang sesuai.",
+        "Eliminate": "Mengurangi kebutuhan mencoba banyak produk fisik yang memakan waktu.",
+        "Reverse_or_Rearrange": "Mengubah alur belanja dari lihat produk → beli menjadi experience → rekomendasi AI → beli."
+    },
+    "logic_concept": [
+        "Kolaborasi Nike x Telkomsel AR Experience Store menghadirkan konsep toko olahraga berbasis teknologi immersive.",
+        "Telkomsel menyediakan infrastruktur digital (5G, AI analytics, AR platform).",
+        "Nike menyediakan produk, komunitas olahraga, dan brand experience.",
+        "Konsumen dapat mencoba sepatu atau apparel secara virtual melalui AR mirror atau smartphone.",
+        "Sistem AI menganalisis gerakan tubuh pengguna untuk memberikan rekomendasi produk.",
+        "Pengalaman belanja menjadi interaktif, personal, dan berbasis data."
+    ],
+    "mockup_store_concept": {
+        "AR_Smart_Mirror": [
+            "Pengunjung berdiri di depan layar AR",
+            "Sistem menampilkan simulasi sepatu atau outfit Nike secara real-time"
+        ],
+        "Motion_Detection_Zone": [
+            "Area kecil untuk melakukan gerakan olahraga",
+            "Sensor membaca gerakan lari, lompat, atau squat"
+        ],
+        "AI_Product_Recommendation": [
+            "Sistem memberikan rekomendasi sepatu berdasarkan analisis gerakan"
+        ],
+        "Nike_x_Telkomsel_Mobile_Integration": [
+            "Konsumen bisa scan QR",
+            "Pengalaman AR dapat dilanjutkan di smartphone"
+        ],
+        "Gamified_Experience": [
+            "Pengunjung dapat mengikuti mini challenge olahraga",
+            "Poin dapat ditukar dengan reward atau diskon"
+        ]
+    },
+    "conclusion": [
+        "Integrasi teknologi AR, AI, dan jaringan Telkomsel dapat menciptakan pengalaman belanja olahraga yang lebih immersive.",
+        "Kolaborasi antara brand teknologi dan brand olahraga membuka peluang inovasi dalam retail experience.",
+        "Konsep AR Experience Store mampu meningkatkan engagement konsumen, personalisasi produk, dan nilai brand.",
+        "Implementasi teknologi ini berpotensi mengubah toko fisik menjadi experience hub, bukan hanya tempat transaksi."
+    ]
+}
