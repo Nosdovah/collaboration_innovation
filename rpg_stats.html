@@ -32,9 +32,14 @@
     <div class="hud-container">
         <!-- Header -->
         <header class="hud-header">
-            <div class="brand-badge glow-badge">VERIFIED_PRO</div>
+            <div class="brand-badge glow-badge" id="hud-badge">VERIFIED_PRO</div>
             <h1>BIONIC METADATA</h1>
             <p class="subtitle">Candidate Performance Index (CPI) Evaluation Unit</p>
+            <div class="candidate-selector" style="margin-top: 20px;">
+                <select id="userDropdown" style="padding: 10px 20px; background: rgba(0,0,0,0.8); color: #fff; border: 1px solid #EE1424; border-radius: 20px; font-family: 'Outfit', sans-serif; outline: none; cursor: pointer; text-transform: uppercase;">
+                    <option value="">Select Candidate...</option>
+                </select>
+            </div>
         </header>
 
         <div class="rpg-grid">

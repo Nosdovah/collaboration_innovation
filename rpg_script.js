@@ -1,37 +1,100 @@
 // rpg_script.js
 
-const metadata = {
-    candidate: {
-        id: "T-NK-2026-9041",
-        name: "Raihan H. Firdaus",
-        classType: "Vanguard Specialist",
-        level: 84,
-        rank: "S",
-        aiAssessment: "The candidate shows exceptional mental resilience and consistent discipline patterns. Heart Rate Recovery points to elite level stress management. Highly recommended for high-pressure tech operations.",
-        attributes: [
-            { name: "Speed", value: 85, color: "#EE1424", icon: "⚡" },
-            { name: "Agility", value: 92, color: "#00A9E0", icon: "🌪️" },
-            { name: "Endurance", value: 78, color: "#FFD700", icon: "🛡️" },
-            { name: "Focus", value: 88, color: "#9D00FF", icon: "👁️" },
-            { name: "Teamwork", value: 75, color: "#00FF00", icon: "🤝" },
-            { name: "Discipline", value: 95, color: "#FF4500", icon: "⚖️" },
-            { name: "Resilience", value: 80, color: "#00FFFF", icon: "❤️‍🔥" }
-        ]
-    }
-};
+let chartInstance = null;
+let candidatesData = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Populate Profile
-    document.getElementById('c-name').textContent = metadata.candidate.name;
-    document.getElementById('c-class').textContent = metadata.candidate.classType;
-    document.getElementById('c-id').textContent = metadata.candidate.id;
-    document.getElementById('c-rank').textContent = metadata.candidate.rank;
-    document.querySelector('.level-badge').textContent = `LVL ${metadata.candidate.level}`;
-    document.getElementById('c-assessment').textContent = metadata.candidate.aiAssessment;
+    // Attempt to fetch from JSON
+    fetch('nike_vibe_recruitment/src/assets/metadata.json')
+        .then(response => {
+            if (!response.ok) {
+                // Fallback, in case it was built and copied to root
+                return fetch('metadata.json');
+            }
+            return response;
+        })
+        .then(response => response.json())
+        .then(data => {
+            candidatesData = data;
+            populateDropdown(data);
+            if (data.length > 0) {
+                renderCandidate(data[0]); // Render first candidate by default
+            }
+        })
+        .catch(err => {
+            console.error("Failed to load candidate metadata:", err);
+            document.getElementById('c-assessment').textContent = "ERROR: Failed to establish telemetry link to biometric database.";
+        });
 
-    // Populate Stat Bars
+    document.getElementById('userDropdown').addEventListener('change', (e) => {
+        const selectedId = e.target.value;
+        const candidate = candidatesData.find(c => c.kandidat_id === selectedId);
+        if (candidate) {
+            renderCandidate(candidate);
+        }
+    });
+});
+
+function populateDropdown(data) {
+    const dropdown = document.getElementById('userDropdown');
+    dropdown.innerHTML = '';
+    data.forEach(c => {
+        const option = document.createElement('option');
+        option.value = c.kandidat_id;
+        option.textContent = `${c.kandidat_id} : ${c.profil_dasar.nama_kandidat}`;
+        dropdown.appendChild(option);
+    });
+}
+
+function renderCandidate(cData) {
+    const pInfo = cData.profil_dasar;
+    const ipk = cData.indeks_performa_kandidat;
+    const ai = cData.biometrik_perilaku_ai;
+
+    document.getElementById('c-name').textContent = pInfo.nama_kandidat;
+    document.getElementById('c-class').textContent = pInfo.recruitment_status.replace('_', ' ');
+    document.getElementById('c-id').textContent = cData.kandidat_id;
+    
+    // Overall score to rank logic
+    let rank = "C";
+    if (ipk.skor_keseluruhan >= 90) rank = "S";
+    else if (ipk.skor_keseluruhan >= 80) rank = "A";
+    else if (ipk.skor_keseluruhan >= 70) rank = "B";
+    document.getElementById('c-rank').textContent = rank;
+    
+    document.querySelector('.level-badge').textContent = `LVL ${ipk.skor_keseluruhan}`;
+    
+    const assessmentParts = [];
+    assessmentParts.push(`Status Verifikasi: ${pInfo.status_verifikasi}.`);
+    assessmentParts.push(`Analisis ${ai.interval_analisis}: Ritme ${ai.ritme_olahraga}.`);
+    assessmentParts.push(`Pemulihan HR: ${ai.fluktuasi_pemulihan_detak_jantung}.`);
+    document.getElementById('c-assessment').textContent = assessmentParts.join(" ");
+
+    const badge = document.getElementById('hud-badge');
+    badge.textContent = pInfo.status_verifikasi;
+    if (pInfo.status_verifikasi === 'REJECTED' || pInfo.status_verifikasi === 'FLAGGED') {
+        badge.style.borderColor = 'red';
+        badge.style.color = 'red';
+    } else if (pInfo.status_verifikasi === 'VERIFIED_PRO') {
+        badge.style.borderColor = '#00ff00';
+        badge.style.color = '#00ff00';
+    } else {
+        badge.style.borderColor = '#00A9E0';
+        badge.style.color = '#00A9E0';
+    }
+
+    const attributes = [
+        { name: "Speed", value: ipk.speed, color: "#EE1424", icon: "⚡" },
+        { name: "Agility", value: ipk.agility, color: "#00A9E0", icon: "🌪️" },
+        { name: "Endurance", value: ipk.endurance, color: "#FFD700", icon: "🛡️" },
+        { name: "Focus 5G", value: ipk.focus_5g, color: "#9D00FF", icon: "👁️" },
+        { name: "Teamwork", value: ipk.teamwork, color: "#00FF00", icon: "🤝" },
+        { name: "Discipline", value: ai.skor_disiplin, color: "#FF4500", icon: "⚖️" },
+        { name: "Resilience", value: ai.skor_resiliensi_mental_juara, color: "#00FFFF", icon: "❤️‍🔥" }
+    ];
+
     const barsContainer = document.getElementById('stat-bars-container');
-    const attributes = metadata.candidate.attributes;
+    barsContainer.innerHTML = ''; // clear previous bars
 
     attributes.forEach((attr) => {
         const statItem = document.createElement('div');
@@ -55,32 +118,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = fill.getAttribute('data-target');
             fill.style.width = target + '%';
         });
-    }, 300);
+    }, 50);
 
-    // Render Radar Chart
     renderRadarChart(attributes);
-});
+}
 
 function renderRadarChart(attrs) {
     const ctx = document.getElementById('rpgRadarChart').getContext('2d');
     
-    // Prepare Data
     const labels = attrs.map(a => a.name);
     const data = attrs.map(a => a.value);
 
     Chart.defaults.color = "rgba(255, 255, 255, 0.7)";
     Chart.defaults.font.family = "'Outfit', sans-serif";
 
-    new Chart(ctx, {
+    if (chartInstance) {
+        chartInstance.destroy(); // Destroy previous chart to avoid overlay/memory leaks
+    }
+
+    chartInstance = new Chart(ctx, {
         type: 'radar',
         data: {
             labels: labels,
             datasets: [{
                 label: 'Biometric Metadata',
                 data: data,
-                backgroundColor: 'rgba(238, 20, 36, 0.2)', // Telkomsel Red with opacity
-                borderColor: '#EE1424', // Telkomsel Red
-                pointBackgroundColor: '#00A9E0', // Telkomsel Blue
+                backgroundColor: 'rgba(238, 20, 36, 0.2)', 
+                borderColor: '#EE1424', 
+                pointBackgroundColor: '#00A9E0', 
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: '#00A9E0',
