@@ -679,10 +679,10 @@ function renderRadarChart(attrs) {
                             weight: '600'
                         }
                     },
+                    min: 0,
+                    max: 100,
                     ticks: {
                         display: false,
-                        min: 0,
-                        max: 100,
                         stepSize: 20
                     }
                 }

@@ -115,6 +115,27 @@ body {
     box-shadow: 0 0 30px rgba(238, 20, 36, 0.5);
 }
 
+.nav-sidebar-footer {
+    margin-top: auto;
+    padding: 2rem 0;
+    width: 100%;
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.nav-sidebar-footer span {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+@media (max-width: 992px) {
+    .nav-sidebar-footer { display: none; }
+}
+
 .live-dot {
     width: 8px;
     height: 8px;
